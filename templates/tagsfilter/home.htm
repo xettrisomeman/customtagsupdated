@@ -1,4 +1,4 @@
-
+{% load hello_tags %}
 <!--Template tags flolder should always be templatetags-->
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,7 @@
     <title>hello</title>
 </head>
 <body>
-    <h1>Hello this is my name <!--using django filter-->
+    <h1>{{name|lower}} and my name is {{name|count}} words.<!--using django filter-->
     </h1>
     <p>Fame level:0</p> <!--make first letter capital-->
     <!---load custom tag method name-->
