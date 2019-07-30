@@ -1,5 +1,5 @@
 from django import template
-
+from ..models import Name
 
 register = template.Library()
 
@@ -13,3 +13,10 @@ def count(value):
     return len(value)
 
 
+#inclusion tag returns dictionary
+@register.inclusion_tag("tagsfilter/details.htm")
+def show_details(count):
+    posts = Name.objects.all()[:count] 
+    return {
+        "posts": posts,
+    }
